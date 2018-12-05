@@ -1,0 +1,22 @@
+server:
+  port: 9090
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+  application:
+    name: microservice-provider-user
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9051/eureka/
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      my-metadata: 我自己定义的元数据
